@@ -1,0 +1,80 @@
+* {
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+    flex-direction: column;
+    background-color: #f1f7fc;
+    color: rgb(21, 20, 20);
+    margin: 0;
+    border-collapse: collapse;
+}
+
+.w3-container {
+    padding: 12px 20px;
+    margin: 7px 200px;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    border: #4f87dc;
+    margin: auto;
+}
+
+
+
+button{
+    padding: 8px;
+    margin: 8px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: rgb(34, 29, 29);
+    border-radius: 5px;
+}
+
+.w3-input {
+    border: 0 none;
+    outline: 0;
+    cursor: pointer;
+    color: rgb(22, 24, 28);
+    margin: 5px;
+    padding: 5px;
+}
+
+.btn:hover {
+    background-color: #4f87dc;
+    color: white;
+}
+
+h1 {
+    margin:0;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/*CSS DO DADAVACI*/
+.dadovaci-container div{
+    width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th:hover {background-color: #3e4545; color: white; cursor: pointer;}
+  
+  .bold{
+      font-weight: bold;
+  }
+
+  a:hover {
+    color:rgb(182, 123, 1);
+    text-decoration: none
+   
+  }

@@ -1,0 +1,55 @@
+<h1>Cadastros disponíveis</h1>
+<div class="dadovaci-container">
+    <a href="/"> Voltar para tela de cadastro</a>
+    
+    {{#each dadovaci}}
+    <div>
+
+        <table>
+
+            <tr>
+                <th>Id: {{this.id}} </th>
+            </tr>
+
+            <br>
+
+            <tr>
+                <th>Nome: {{this.nome}}</th>
+            </tr>
+            <br>
+            <tr>
+                <th>Nascimento: {{this.datanasc}}
+            </tr>
+            </tr>
+
+            <br>
+
+            <tr>
+                <th>Idade: {{this.idade}} </th>
+            </tr>
+
+            <br>
+
+            <tr>
+                <th> Local: {{this.local}} </th>
+            </tr>
+
+            <br>
+
+            </tr>
+            <th>Número de vacinas: {{this.quantvac}} </th>
+            </tr>
+
+            <br>
+
+            <tr>
+                <th>CPF: {{this.cpf}}</th>
+            </tr>
+
+        </table>
+
+    </div>
+
+    {{/each}}
+
+</div>

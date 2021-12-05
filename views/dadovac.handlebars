@@ -1,0 +1,13 @@
+<h1>Vacinados</h1>
+<div class="dadovac-page">
+
+    {{#each dadovaci}}
+       <div>
+           #{{this.id}} - 
+           <span class="bold"> <a href="/dadovaci/{{this.id}}"> {{this.nome}}</a></span>
+        - {{this.quantvac}} quantidade de vacinas
+
+       </div> 
+    {{/each}}
+
+</div>
