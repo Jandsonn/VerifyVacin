@@ -1,13 +1,15 @@
 <h1>Vacinados</h1>
+
 <div class="dadovac-page">
+    <a href="/dadovaci">Voltar</a>
+    <div class="container">
+        <h1>{{dadovac.nome}}</h1>
+        <p> Está pessoa tomou: {{dadovac.quantvac}} Vacinas.</p>
+        <p>CPF: {{dadovac.cpf}}</p>
+        <p>Localidade: {{dadovac.local}}</p>
 
-    {{#each dadovaci}}
-       <div>
-           #{{this.id}} - 
-           <span class="bold"> <a href="/dadovaci/{{this.id}}"> {{this.nome}}</a></span>
-        - {{this.quantvac}} quantidade de vacinas
-
-       </div> 
-    {{/each}}
+    
+    </div> 
+   
 
 </div>

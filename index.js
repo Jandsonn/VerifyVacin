@@ -11,6 +11,7 @@ app.use(
 
 app.use(express.json())
 
+/*conexão com o HANDLEBARS*/
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
@@ -20,7 +21,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/dadovaci/insertdadovaci', (req, res) => {
-
+    
+    /*DADOS INSERIDOS*/
     const idade = req.body.idade
     const local = req.body.local
     const quantvac = req.body.quantvac
@@ -29,6 +31,7 @@ app.post('/dadovaci/insertdadovaci', (req, res) => {
     const nome = req.body.nome
 
 
+/*SELECT DAS INFORMAÇÕES ABAIXO:*/
     const sql = `INSERT INTO dadovaci (idade,local,quantvac,datanasc,cpf,nome) VALUES ('${idade}','${local}','${quantvac}','${datanasc}','${cpf}','${nome}')`
     conn.query(sql, function(err) {
         if (err) {
@@ -56,8 +59,8 @@ app.get('/dadovaci', (req, res) => {
 
 
 /*Const que busca os dados : */
-
 app.get('/dadovaci/:id', (req,res) =>{
+   
     const id = req.params.id
 
     const sql = `SELECT * FROM dadovaci WHERE id = ${id}`
@@ -67,6 +70,7 @@ app.get('/dadovaci/:id', (req,res) =>{
             console.log(err)
 
         }
+       
         const dadovac = data[0]
 
         res.render('dadovac',{dadovac})
@@ -75,8 +79,7 @@ app.get('/dadovaci/:id', (req,res) =>{
 })
 
 
-
-
+/*CRIAÇÃO DA CONEXÃO COM O MYSQL*/
 const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -85,6 +88,7 @@ const conn = mysql.createConnection({
 
 })
 
+/*CASO OCORRA ERRO VAI EXIBIR NO LOG*/
 conn.connect(function(err) {
     if (err) {
         console.log(err)
