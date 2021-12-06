@@ -97,6 +97,29 @@ app.get('/dadovaci/edit/:id', (req,res) => {
     })
 })
 
+/*Função para a edição de dados no link updatedadovac*/
+app.post('/dadovaci/updatedadovac',(req,res) => {
+    
+    const id = req.body.id
+    const nome = req.body.nome
+    const idade = req.body.idade
+    const local = req.body.local
+    const quantvac = req.body.quantvac
+    const datanasc = req.body.datanasc
+    const cpf = req.body.cpf
+
+    const sql = `UPDATE dadovaci SET id = '${id}', nome = '${nome}', idade = '${idade}', local = '${local}', quantvac = '${quantvac}', datanasc = '${datanasc}', cpf = '${cpf}'  WHERE id = '${id}'`
+
+    conn.query(sql, function(err){
+        if(err){
+            console.log(err)
+            return
+        }
+
+        res.redirect('/dadovaci')
+    })
+
+})
 
 
 /*CRIAÇÃO DA CONEXÃO COM O MYSQL*/
