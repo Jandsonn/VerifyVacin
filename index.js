@@ -78,6 +78,26 @@ app.get('/dadovaci/:id', (req,res) =>{
     })
 })
 
+/*Criando rota para página de edição de ID*/
+app.get('/dadovaci/edit/:id', (req,res) => {
+     
+    const id = req.params.id
+    
+    const sql = `SELECT*FROM dadovaci where id = ${id}`
+    
+    conn.query(sql, function(err, data){
+        if(err){
+            console.log(err)
+            return
+        }
+        
+        const dadovac = data[0]
+        res.render('editdadovac', {dadovac})
+
+    })
+})
+
+
 
 /*CRIAÇÃO DA CONEXÃO COM O MYSQL*/
 const conn = mysql.createConnection({
