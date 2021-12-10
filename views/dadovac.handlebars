@@ -9,7 +9,13 @@
         <p>Localidade: {{dadovac.local}}</p>
 
         <div class="action">
+            <!--Aqui é instância para a edição-->
             <a href="/dadovaci/edit/{{dadovac.id}}">Editar</a>
+            
+            <form action="/dadovaci/remove/{{dadovac.id}}" method="POST">
+            <br>
+           <input type="submit" value="Remover" class="btn-edit">
+            </form>
 
         </div>    
     

@@ -122,6 +122,20 @@ app.post('/dadovaci/updatedadovac',(req,res) => {
 })
 
 
+app.post('/dadovaci/remove/:id',(req,res) =>{
+    const id = req.params.id;
+    const sql = `DELETE FROM dadovaci WHERE id = ${id}`
+    
+    conn.query(sql,function(err){
+        if(err){
+            log(err)
+        }
+
+        res.redirect('/dadovaci')
+
+    })
+})
+
 /*CRIAÇÃO DA CONEXÃO COM O MYSQL*/
 const conn = mysql.createConnection({
     host: 'localhost',
